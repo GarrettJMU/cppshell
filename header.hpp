@@ -29,8 +29,8 @@ char *argv[1];
 
 void batchParse(char *line);
 void getUserName();
-void handleFork(char *command, char *args[], int numberOfArgsIncludingCommand);
-void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand);
+void handleFork(char *command, char *arguments[], int numberOfArgsIncludingCommand);
+void handlePiping(char *command, char *arguments[], int numberOfArgsIncludingCommand);
 void maybeExecutePipeForkOrExit(char *command, char *argv[], int numberOfArgsIncludingCommand);
 void parse(char *line);
 void setNull();

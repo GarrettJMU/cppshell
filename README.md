@@ -7,18 +7,23 @@ Filename: README.md
 ## File Manifest
 
 - main.cpp
+- execute.cpp
+- fork.cpp
+- parse.cpp
+- pipes.cpp
 - header.hpp
 - pam (Executable)
 - README.md
 - Makefile
+- /git (decided to use version controlling this time)
 
 ## Compiling Instructions
-```g++ main.cpp -o player.o```
+```g++ main.cpp -o pam```
 or 
 ```make```
 
 ## Operating Instructions
-```./player```
+```./pam```
 ## List of design decisions
 In order of getting rid of the \n on username% I hardcoded it to only take the first 8 charachters.
 
@@ -26,11 +31,28 @@ In order of getting rid of the \n on username% I hardcoded it to only take the f
 No extra features for this assignment.
 
 ## List of known bugs
-
+When piping it creates concats the username. I didn't have enough time to figure that out so as a fix I add a new line on line 22 of main.cpp
+i.e.
+```
+  ls
+  do exec
+  cssc0849% back to waiting for input
+```
+when piped:
+```
+  ls | sort
+  do exec
+  cssc0849% cssc0849% back to waiting for input
+```
+My (hacky) solution:
+```
+  ls | sort
+  do exec
+  cssc0849%
+  cssc0849% back to waiting for input
+```
+So I put a line break above to protect against the double username (but now it's just an empty line).
 
 ## Lessons learned
-1) Log into EDORAS first. I ran into all sorts of trouble by doing this locally on my Mac, that would've just worked had I been doing it on the EDORAS environment.
-2) Should've refactored at the beginning. I had 4 if statements then had individual hard coded values in each if block. In doing so I introduced a bug, (sem_post instead of sem_wait at the beginning). I spent 2 hours diagnosing it, and in doing so refactored to try and get to the root of the problem (multiple people in the critical section and calling free). Once I refactored out to a single function I noticed the issue almost immediately.
-3) Edit in CLion (or whatever IDE) then `cat > main.cpp` and copy in. This sped up my workflow at least 2x
-4) I'm sure it would've been quicker and probably easier to have a partner but I'm glad I did this solo so I could learn all the nuances of the SDSU system etc. 
-5) Read your emails thoroughly :)
+1) Use version controlling. Since I'm not using VIM (I find it faster to edit in my IDE the cat > filename into edoras file).
+2) By using version controlling I can keep track of local and remote (ssh) development.

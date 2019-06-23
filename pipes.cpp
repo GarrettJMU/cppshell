@@ -8,14 +8,14 @@
 #ifndef PIPES_CPP
 #define PIPES_CPP
 
-void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand) {
+void handlePiping(char *command, char *arguments[], int numberOfArgsIncludingCommand) {
     for (int i = 0; i < numberOfArgsIncludingCommand; i++) {
-        if (strcmp(args[i], "|") == 0) {
-            args[i] = NULL;
+        if (strcmp(arguments[i], "|") == 0) {
+            arguments[i] = NULL;
             char *right[numberOfArgsIncludingCommand - i];
             int c = 0;
             for (int j = i; j < numberOfArgsIncludingCommand - 1; j++) {
-                right[j - i] = args[j + 1];
+                right[j - i] = arguments[j + 1];
                 c++;
             }
             right[c] = NULL;
@@ -25,7 +25,7 @@ void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand)
             if (leftPid == 0) {//left (child)
                 dup2(2, 1);
                 dup2(p[1], STDOUT_FILENO);
-                execvp(command, args);
+                execvp(command, arguments);
             } else {//right (parent)
                 pid_t rightPid = fork();
                 close(p[1]);
