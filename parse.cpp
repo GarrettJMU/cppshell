@@ -24,13 +24,6 @@ void batchParse(char *line) { //separate commands based on ; and new lines
 //parses each command into the command and arguments
 void parse(char *line) { //separate commands and arguments based in whitespace
     int i = 0;
-    while (line[i] != '\0') {
-        if (line[i] == '&') {
-            backgroundProcess = 1;
-            line[i] = '\0';
-        }
-        i++;
-    }
     string buf; // Have a buffer string
     stringstream ss(line); // Insert the string into a stream
     vector<char *> tokens; // Create vector to hold our words
@@ -45,7 +38,6 @@ void parse(char *line) { //separate commands and arguments based in whitespace
     }
     argv[tokens.size()] = NULL;
     execute(argv[0], argv, tokens.size());
-    backgroundProcess = 0;
 }
 
 #endif

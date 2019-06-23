@@ -13,10 +13,7 @@ void createPipe(char *command, char *args[], int numberOfArgsIncludingCommand) {
     for (int i = 0; i < numberOfArgsIncludingCommand; i++) {
         if (strcmp(args[i], "|") == 0) { piping = 1; }
     }
-    if (strcmp(args[numberOfArgsIncludingCommand - 1], "&") == 0) {
-        backgroundProcess = 1;
-    }
-    if ((strcmp(command, "exit") == 0) || (strcmp(command, "quit") == 0)) { //built-in command quit
+    if ((strcmp(command, "exit") == 0)) { //built-in command quit
         endProcess = 1;
     } else if (piping) {
         handlePiping(command, args, numberOfArgsIncludingCommand);
@@ -52,7 +49,7 @@ void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand)
                     dup2(p[0], STDIN_FILENO);
                     createPipe(right[0], right, c);
                 } else { //parent
-                    if (!backgroundProcess) { waitpid(rightPid, 0, 0); }
+                    waitpid(rightPid, 0, 0);
                 }
             }
             break;
