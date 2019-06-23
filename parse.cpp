@@ -37,7 +37,7 @@ void parse(char *line) { //separate commands and arguments based in whitespace
         argv[k] = tokens[k];
     }
     argv[tokens.size()] = NULL;
-    execute(argv[0], argv, tokens.size());
+    maybeExecutePipeForkOrExit(argv[0], argv, tokens.size());
 }
 
 #endif

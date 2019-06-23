@@ -23,11 +23,11 @@ int main(int argc, char *argv[]) {
                     setNull();
                     batchParse(command);
                 }
-                printf("1: hitting here inside of the while loop\n");
+//                printf("1: hitting here inside of the while loop\n");
             }
-            printf("1: hitting here outside of the while loop\n");
+//            printf("1: hitting here outside of the while loop\n");
         } else if ((argc == 2) && !endProcess) { //executing
-            printf("2: hitting here outside of the while loop\n");
+//            printf("2: hitting here outside of the while loop\n");
             batch = 1;
             ifstream file(argv[1]);
             string nextinst;
@@ -38,14 +38,10 @@ int main(int argc, char *argv[]) {
                 if ((inst != "") && (inst != " ") && (inst != "\n") && (inst != "\t") && (inst != "\0")) {
                     batchParse(inst);
                 }
-                printf("2: hitting here inside of the while loop\n");
+//                printf("2: hitting here inside of the while loop\n");
             }
             argc = 0;
         } else if (endProcess) { return 0; }
-        else {
-            cout << "Invalid number of arguments passed" << endl;
-            return -1;
-        }
     }
     return 0;
 }

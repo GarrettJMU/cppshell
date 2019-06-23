@@ -10,11 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3128081-8321-4e6a-a88c-a23a76642cf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/execute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/execute.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fork.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fork.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/header.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/parse.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pipes.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="8" selection-end-line="65" selection-end-column="1" />
+            <state relative-caret-position="645">
+              <caret line="43" column="44" selection-end-line="61" selection-end-column="1" />
               <folding>
                 <element signature="e#151#172#0" expanded="true" />
               </folding>
@@ -43,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fork.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -52,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pipes.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="180">
+              <caret line="12" column="40" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -61,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parse.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+            <state relative-caret-position="390">
+              <caret line="26" column="39" selection-end-line="42" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -70,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/execute.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="375">
+              <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -85,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="19" lean-forward="true" selection-end-line="38" />
+            <state relative-caret-position="465">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -98,14 +97,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>endSh</find>
-      <find>argv</find>
-      <find>bg</find>
-      <find>batchParse</find>
       <find>cmdLine</find>
       <find>cmd</find>
       <find>p</find>
-      <find>endProcess</find>
       <find>ls</find>
       <find>:</find>
       <find>Command</find>
@@ -124,6 +118,15 @@
       <find>O_WRONLY</find>
       <find>backgroundProcess</find>
       <find>maxArguments</find>
+      <find>endProcess</find>
+      <find>if (strcmp(args[i], &quot;|&quot;) == 0) { piping = 1; }</find>
+      <find>maybeExecutePipeOrFork</find>
+      <find>piping</find>
+      <find>createPipe</find>
+      <find>numberOfArgsIncludingCommand</find>
+      <find>handleFork</find>
+      <find>cout</find>
+      <find>success</find>
     </findStrings>
     <replaceStrings>
       <replace>backgroundProcess</replace>
@@ -135,6 +138,7 @@
       <replace>rightPid</replace>
       <replace>numberOfArgs</replace>
       <replace>numberOfArgsIncludingCommand</replace>
+      <replace>maybeExecutePipeForkOrExit</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -144,12 +148,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/execute.cpp" />
-        <option value="$PROJECT_DIR$/fork.cpp" />
-        <option value="$PROJECT_DIR$/pipes.cpp" />
         <option value="$PROJECT_DIR$/parse.cpp" />
         <option value="$PROJECT_DIR$/header.hpp" />
+        <option value="$PROJECT_DIR$/execute.cpp" />
+        <option value="$PROJECT_DIR$/pipes.cpp" />
+        <option value="$PROJECT_DIR$/fork.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -209,12 +213,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561240186104</updated>
       <workItem from="1561240187509" duration="6435000" />
-      <workItem from="1561310501437" duration="3196000" />
+      <workItem from="1561310501437" duration="4448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9631000" />
+    <option name="totallyTimeSpent" value="10883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2720" y="23" width="1280" height="1417" extended-state="0" />
@@ -251,48 +255,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/parse.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="8" selection-end-line="65" selection-end-column="1" />
-          <folding>
-            <element signature="e#151#172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/execute.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="390">
+          <caret line="26" column="39" selection-end-line="42" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pipes.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="180">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fork.cpp">
+    <entry file="file://$PROJECT_DIR$/execute.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parse.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        <state relative-caret-position="375">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/header.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" lean-forward="true" selection-end-line="38" />
+        <state relative-caret-position="465">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fork.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="44" selection-end-line="61" selection-end-column="1" />
+          <folding>
+            <element signature="e#151#172#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -8,21 +8,6 @@
 #ifndef PIPES_CPP
 #define PIPES_CPP
 
-void createPipe(char *command, char *args[], int numberOfArgsIncludingCommand) {
-    int piping = 0;
-    for (int i = 0; i < numberOfArgsIncludingCommand; i++) {
-        if (strcmp(args[i], "|") == 0) { piping = 1; }
-    }
-    if ((strcmp(command, "exit") == 0)) { //built-in command quit
-        endProcess = 1;
-    } else if (piping) {
-        handlePiping(command, args, numberOfArgsIncludingCommand);
-    } else {
-        handleFork(command, args, numberOfArgsIncludingCommand);
-    }
-    endProcess = 1;
-}
-
 void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand) {
     for (int i = 0; i < numberOfArgsIncludingCommand; i++) {
         if (strcmp(args[i], "|") == 0) {
@@ -47,7 +32,7 @@ void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand)
                 if (rightPid == 0) { //right child
                     dup2(2, 1);
                     dup2(p[0], STDIN_FILENO);
-                    createPipe(right[0], right, c);
+                    maybeExecutePipeForkOrExit(right[0], right, c);
                 } else { //parent
                     waitpid(rightPid, 0, 0);
                 }
@@ -56,5 +41,4 @@ void handlePiping(char *command, char *args[], int numberOfArgsIncludingCommand)
         }
     }
 }
-
 #endif

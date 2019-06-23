@@ -8,8 +8,8 @@
 #ifndef EXECUTE_CPP
 #define EXECUTE_CPP
 
-void execute(char *command, char *args[], int numberOfArgsIncludingCommand) {
-    //This handles the executing of commands
+void maybeExecutePipeForkOrExit(char *command, char *args[], int numberOfArgsIncludingCommand) {
+    //This determines whether to execute, pipe or fork based off of input
     int piping = 0;
 
     //Default piping to false then check if piping is available
