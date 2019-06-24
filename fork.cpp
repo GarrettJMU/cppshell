@@ -27,9 +27,9 @@ void handleFork(char *command, char *arguments[], int numberOfArgsIncludingComma
             perror(command);
             endProcess = 1;
         } else {
-            if (waitpid(childID, 0, 0) < 0) {//parent process
-                endProcess = 1;
+            if (waitpid(childID, 0, 0) < 0) {
                 printf("Error when waiting for child.\n");
+                endProcess = 1;
             }
         }
     }
