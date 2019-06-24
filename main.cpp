@@ -13,13 +13,19 @@ int main(int argc, char *argv[]) {
     if (!endProcess) {
         if (argc == 1 && !endProcess) {
             while (!endProcess) {
-                setNull(); //set argv to null
+                //Reset and have username generated
+                setNull();
                 string commandLine;
-                getUserName();
+                if (!userNameGotten){
+                    getUserName();
+                    userNameGotten = 1;
+                }
+
+                // Check input
                 if (getline(cin, commandLine) == 0) { endProcess = 1; }
                 char *command = new char[commandLine.length() + 1];
                 strcpy(command, commandLine.c_str());
-                printf("\n"); // This protects against the username stacking. Not in love with this solution
+//                printf("\n"); // This protects against the username stacking. Not in love with this solution
                 if ((command != " ") && (!endProcess)) {
                     setNull();
                     parse(command);

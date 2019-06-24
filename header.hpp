@@ -26,6 +26,7 @@ int batch = 0;
 int endProcess = 0;
 int maxArguments = 1;
 char *argv[1];
+int userNameGotten = 0;
 
 void batchParse(char *line);
 void getUserName();

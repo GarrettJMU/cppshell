@@ -22,19 +22,20 @@ void handlePiping(char *command, char *arguments[], int numberOfArgsIncludingCom
             int p[2];
             pipe(p);
             pid_t leftPid = fork();
-            if (leftPid == 0) {//left (child)
+            if (leftPid == 0) {
+                //Child Process we update the FD and exec
                 dup2(2, 1);
                 dup2(p[1], STDOUT_FILENO);
                 execvp(command, arguments);
-            } else {//right (parent)
+            } else {
+                //Parent Process we update the FD and exec
                 pid_t rightPid = fork();
                 close(p[1]);
-                if (rightPid == 0) { //right child
+                if (rightPid == 0) {
+                    //Child Process we update the FD and then toss back to execute.cpp
                     dup2(2, 1);
                     dup2(p[0], STDIN_FILENO);
                     maybeExecutePipeForkOrExit(right[0], right, c);
-                } else { //parent
-                    waitpid(rightPid, 0, 0);
                 }
             }
             break;
