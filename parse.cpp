@@ -10,21 +10,29 @@
 
 //parses each command into the command and arguments
 void parse(char *line) { //separate commands and arguments based in whitespace
-    int i = 0;
-    string buf; // Have a buffer string
-    stringstream ss(line); // Insert the string into a stream
-    vector<char *> tokens; // Create vector to hold our words
-    while (ss >> buf) {
-        char *temp = new char[buf.length() + 1];
-        strcpy(temp, buf.c_str());
-        tokens.push_back(temp);
+    // Create buffer as a string and insert into a stream then create vector to hold onto words (using vector instead of array due to sizing).
+    string buffer;
+    stringstream bufferStream(line);
+    vector<char *> words;
+
+    //Use extraction on the buffer
+    while (bufferStream >> buffer) {
+        //Get chars, convert and push to words vector
+        char *tempCharacters = new char[buffer.length() + 1];
+        strcpy(tempCharacters, buffer.c_str());
+        words.push_back(tempCharacters);
     }
-    char **argv = new char *[tokens.size() + 1]; //set char array to hold arguments
-    for (int k = 0; k < tokens.size(); k++) {
-        argv[k] = tokens[k];
+
+    //using an array (fixed size, no need for vector) to hold all of the chars
+    char **argv = new char *[words.size() + 1];
+
+    //Inserting words vector into argv
+    for (int i = 0; i < words.size(); i++) {
+        argv[i] = words[i];
     }
-    argv[tokens.size()] = NULL;
-    maybeExecutePipeForkOrExit(argv[0], argv, tokens.size());
+
+    argv[words.size()] = NULL;
+    maybeExecutePipeForkOrExit(argv[0], argv, words.size());
 }
 
 #endif

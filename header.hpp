@@ -26,7 +26,6 @@ int batch = 0;
 int endProcess = 0;
 int maxArguments = 1;
 char *argv[1];
-int userNameGotten = 0;
 
 void batchParse(char *line);
 void getUserName();
@@ -35,4 +34,5 @@ void handlePiping(char *command, char *arguments[], int numberOfArgsIncludingCom
 void maybeExecutePipeForkOrExit(char *command, char *argv[], int numberOfArgsIncludingCommand);
 void parse(char *line);
 void setNull();
+void updateFileDescriptors(int fd1, int fd2);
 #endif

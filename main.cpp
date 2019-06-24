@@ -16,17 +16,16 @@ int main(int argc, char *argv[]) {
                 //Reset and have username generated
                 setNull();
                 string commandLine;
-                if (!userNameGotten){
-                    getUserName();
-                    userNameGotten = 1;
-                }
+                getUserName();
 
                 // Check input
                 if (getline(cin, commandLine) == 0) { endProcess = 1; }
                 char *command = new char[commandLine.length() + 1];
                 strcpy(command, commandLine.c_str());
-//                printf("\n"); // This protects against the username stacking. Not in love with this solution
+
+                // printf("\n"); // This protects against the username stacking. Not in love with this solution so commented out.
                 if ((command != " ") && (!endProcess)) {
+                    //Handling parsing here
                     setNull();
                     parse(command);
                 }
